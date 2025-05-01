@@ -1,0 +1,100 @@
+/expense-tracker-app
+│
+├── /backend
+│   ├── config/
+│   │   ├── db.js               # MongoDB connection
+│   │   ├── redis.js            # Redis connection
+│   │   ├── ocrConfig.js        # (Optional) OCR configuration (e.g., Tesseract.js)
+│   │
+│   ├── controllers/
+│   │   ├── authController.js    # Signup/Login
+│   │   ├── expenseController.js # CRUD for Expenses
+│   │   ├── budgetController.js  # Predict monthly budgets/savings
+│   │
+│   ├── models/
+│   │   ├── User.js             # User model
+│   │   ├── Expense.js          # Expense model
+│   │   ├── Budget.js           # Optional - to store budgets separately
+│   │
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── expenseRoutes.js
+│   │   ├── budgetRoutes.js
+│   │
+│   ├── middleware/
+│   │   ├── authMiddleware.js   # JWT authentication
+│   │   ├── errorMiddleware.js  # Error handler
+│   │   ├── cacheMiddleware.js  # Redis caching
+│   │
+│   ├── utils/
+│   │   ├── nlpCategorizer.js   # Auto-categorize expenses (AI / NLP logic)
+│   │   ├── ocrHelper.js        # OCR scan receipt helper
+│   │
+│   ├── validations/
+│   │   ├── expenseValidation.js # Validation for expense inputs
+│   │   ├── userValidation.js    # Validation for user signup/login
+│   │
+│   ├── app.js                  # Express app config
+│   ├── server.js               # Server listener
+│   ├── package.json
+│   └── .env                    # Environment variables
+│
+├── /frontend
+│   ├── public/
+│   │   └── index.html
+│   │
+│   ├── src/
+│   │   ├── assets/              # Logos, images
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   │   ├── LoginForm.jsx
+│   │   │   │   ├── RegisterForm.jsx
+│   │   │   │
+│   │   │   ├── Expenses/
+│   │   │   │   ├── ExpenseList.jsx
+│   │   │   │   ├── ExpenseForm.jsx
+│   │   │   │   ├── ExpenseItem.jsx
+│   │   │   │
+│   │   │   ├── Budget/
+│   │   │   │   ├── BudgetChart.jsx
+│   │   │   │   ├── PredictSavingsCard.jsx
+│   │   │   │
+│   │   │   ├── UI/
+│   │   │   │   ├── Navbar.jsx
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   ├── Loader.jsx
+│   │   │   │
+│   │   ├── context/
+│   │   │   ├── AuthContext.js
+│   │   │   ├── ExpenseContext.js
+│   │   │
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useExpenses.js
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── RegisterPage.jsx
+│   │   │   ├── DashboardPage.jsx
+│   │   │   ├── ExpensePage.jsx
+│   │   │   ├── BudgetPage.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   ├── api.js            # Axios instance
+│   │   │   ├── authService.js    # Auth APIs
+│   │   │   ├── expenseService.js # Expense APIs
+│   │   │   ├── budgetService.js  # Budget APIs
+│   │   │
+│   │   ├── styles/
+│   │   │   ├── main.css          # TailwindCSS or custom styles
+│   │   │
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   ├── router.js             # React Router setup
+│   │
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
+│   ├── package.json
+│   └── .env                     # Frontend environment variables
+│
+└── README.md
